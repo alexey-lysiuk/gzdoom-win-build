@@ -1,6 +1,6 @@
 @echo off
 
-set ROOT_DIR=%~dp0
+set ROOT_DIR=%~dp0\..\
 pushd "%ROOT_DIR%"
 
 if not exist build_x64 (
