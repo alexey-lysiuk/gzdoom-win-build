@@ -38,6 +38,7 @@ for %%d in (Debug Release MinSizeRel RelWithDebInfo) do (
     xcopy "%THIRDPARTY_DIR%\glew\bin\x64\glew32.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\fmod\bin\fmodex64.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\openal\bin\x64\OpenAL32.dll" %%d /D /Y >nul
+    xcopy "%THIRDPARTY_DIR%\openal\bin\x64\wrap_oal.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\mpg123\bin\x64\libmpg123-0.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\sndfile\bin\x64\libsndfile-1.dll" %%d /D /Y >nul
 )

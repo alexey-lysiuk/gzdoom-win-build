@@ -14,7 +14,6 @@ set DX_INCLUDE_DIR=%THIRDPARTY_DIR%directx\include
 set DX_LIB_DIR=%THIRDPARTY_DIR%directx\lib\x86\
 
 %THIRDPARTY_DIR%cmake\bin\cmake.exe ^
-    -DCMAKE_EXE_LINKER_FLAGS="/SAFESEH:NO" ^
     -DD3D_INCLUDE_DIR="%DX_INCLUDE_DIR%" ^
     -DXINPUT_INCLUDE_DIR="%DX_INCLUDE_DIR%" ^
     -DDX_dinput8_LIBRARY="%DX_LIB_DIR%dinput8.lib" ^
@@ -39,6 +38,7 @@ for %%d in (Debug Release MinSizeRel RelWithDebInfo) do (
     xcopy "%THIRDPARTY_DIR%\glew\bin\x86\glew32.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\fmod\bin\fmodex.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\openal\bin\x86\OpenAL32.dll" %%d /D /Y >nul
+    xcopy "%THIRDPARTY_DIR%\openal\bin\x86\wrap_oal.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\mpg123\bin\x86\libmpg123-0.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\mpg123\bin\x86\libgcc_s_sjlj-1.dll" %%d /D /Y >nul
     xcopy "%THIRDPARTY_DIR%\sndfile\bin\x86\libsndfile-1.dll" %%d /D /Y >nul
