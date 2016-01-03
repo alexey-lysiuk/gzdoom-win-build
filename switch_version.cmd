@@ -34,4 +34,5 @@ git checkout %BRANCH%
 
 popd
 
+echo.
 pause
