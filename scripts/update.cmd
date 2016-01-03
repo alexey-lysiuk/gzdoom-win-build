@@ -3,7 +3,7 @@
 set ROOT_DIR=%~dp0\..\
 pushd "%ROOT_DIR%"
 
-set PATH=%ROOT_DIR%thirdparty\git\bin;%PATH%\
+set PATH=%ROOT_DIR%thirdparty\git\bin;%PATH%
 
 if not exist gzdoom (
     git clone https://github.com/coelckers/gzdoom.git
