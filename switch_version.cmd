@@ -76,7 +76,6 @@ goto :eof
         git branch --track %1 %2
     )
 
-    echo git checkout %1
     git checkout %1
 
     goto :eof
