@@ -7,6 +7,8 @@ if not "%1" == "86" if not "%1" == "64" (
 
 pushd "%~dp0"
 
+call generate.cmd %1
+
 call :DetectSolutionName GZDoom
 
 if not defined SOLUTION_NAME (

@@ -8,6 +8,8 @@ if not "%1" == "86" if not "%1" == "64" (
 set ROOT_DIR=%~dp0\..\
 pushd "%ROOT_DIR%"
 
+call scripts\update.cmd
+
 if not exist build_x%1 (
     md build_x%1
 )
