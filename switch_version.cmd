@@ -58,7 +58,7 @@ goto :eof
     :: %1 - remote name
     :: %2 - remote url
     :: 'more' converts Unix to DOS line endings, i.e. <LF> to <CR><LF>
-    git remote -v | more | findstr \^<%1\^> >nul
+    git remote | more | findstr \^<%1\^> >nul
 
     if %ERRORLEVEL% neq 0 (
         git remote add -f %1 %2
@@ -70,7 +70,7 @@ goto :eof
     :: %1 - local branch name
     :: %2 - remote branch name
     :: 'more' converts Unix to DOS line endings, i.e. <LF> to <CR><LF>
-    git branch -v | more | findstr \^<%1\^> >nul
+    git branch | more | findstr \^<%1\^> >nul
 
     if %ERRORLEVEL% neq 0 (
         git branch --track %1 %2
