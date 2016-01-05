@@ -1,5 +1,6 @@
 @echo off
 
+:: Remote for GZDoom is always present
 set REMOTE_NAME=
 set REMOTE_URL=
 
@@ -9,24 +10,36 @@ echo ^|  Press the corresponding button to switch to a version:  ^|
 echo ^+----------------------------------------------------------^+
 echo ^|  1 - GZDoom 2.x.x                                        ^|
 echo ^|  2 - GZDoom 1.8.x                                        ^|
-echo ^|  3 - ZDoom                                               ^|
+echo ^|  3 - GZDoom GPL                                          ^|
+echo ^|  4 - GLOOME                                              ^|
+echo ^|  5 - ZDoom                                               ^|
 echo ^+----------------------------------------------------------^+
 echo ^|  0 - Exit                                                ^|
 echo ^+----------------------------------------------------------^+
 echo.
 
-choice /c 1230
+choice /c 123450
 
 if %ERRORLEVEL% equ 1 (
-    set BRANCH_LOCAL=gz_master
+    set BRANCH_LOCAL=gzdoom-2xx
     set BRANCH_REMOTE=gzdoom/master
 ) else if %ERRORLEVEL% equ 2 (
-    set BRANCH_LOCAL=gz_18x
+    set BRANCH_LOCAL=gzdoom-18x
     set BRANCH_REMOTE=gzdoom/g1.8
 ) else if %ERRORLEVEL% equ 3 (
+    set REMOTE_NAME=gzdoom-gpl
+    set REMOTE_URL=https://github.com/nashmuhandes/GZDoom-GPL.git
+    set BRANCH_LOCAL=gzdoom-gpl
+    set BRANCH_REMOTE=gzdoom-gpl/master
+) else if %ERRORLEVEL% equ 4 (
+    set REMOTE_NAME=gloome
+    set REMOTE_URL=https://github.com/marrub--/GLOOME.git
+    set BRANCH_LOCAL=gloome
+    set BRANCH_REMOTE=gloome/master
+) else if %ERRORLEVEL% equ 5 (
     set REMOTE_NAME=zdoom
     set REMOTE_URL=https://github.com/rheit/zdoom.git
-    set BRANCH_LOCAL=z_master
+    set BRANCH_LOCAL=zdoom
     set BRANCH_REMOTE=zdoom/master
 ) else (
     exit /b

@@ -12,6 +12,10 @@ call generate.cmd %1
 call :DetectSolutionName GZDoom
 
 if not defined SOLUTION_NAME (
+    call :DetectSolutionName GLOOME
+)
+
+if not defined SOLUTION_NAME (
     call :DetectSolutionName ZDoom
 )
 
