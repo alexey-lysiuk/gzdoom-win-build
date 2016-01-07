@@ -51,6 +51,10 @@ echo.
 call scripts\git_path.cmd
 call scripts\setup.cmd
 
+:: TODO add check for switching to the same branch
+call scripts\cleanup.cmd 86
+call scripts\cleanup.cmd 64
+
 cd gzdoom
 git fetch --all
 
