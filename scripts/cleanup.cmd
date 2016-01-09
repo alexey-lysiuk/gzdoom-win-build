@@ -7,15 +7,19 @@ if not "%1" == "86" if not "%1" == "64" (
 
 pushd "%~dp0"
 
-cd ..\build_x%1
-del CMakeCache.txt 1>nul 2>nul
+if exist ..\build_x%1 (
+    cd ..\build_x%1
+    del CMakeCache.txt 1>nul 2>nul
 
-for %%d in (Debug Release MinSizeRel RelWithDebInfo) do (
-    call :DeleteGeneratedFiles %%d
+    for %%d in (Debug Release MinSizeRel RelWithDebInfo) do (
+        call :DeleteGeneratedFiles %%d
+    )
 )
 
-cd ..\bin_x%1
-call :DeleteGeneratedFiles .
+if exist ..\build_x%1 (
+    cd ..\bin_x%1
+    call :DeleteGeneratedFiles .
+)
 
 popd
 
