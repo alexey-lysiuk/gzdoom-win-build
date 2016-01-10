@@ -1,5 +1,9 @@
 @echo off
 
+if defined VCINSTALLDIR (
+    exit /b
+)
+
 ::  The same idea as in CMake:
 ::  Check for the newest Visual Studio installed and setup its build environment
 
