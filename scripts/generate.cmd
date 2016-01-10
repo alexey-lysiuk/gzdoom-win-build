@@ -28,6 +28,7 @@ if "%1" == "86" (
 )
 
 %THIRDPARTY_DIR%cmake\bin\cmake.exe ^
+    %CMAKE_GENERATOR% ^
     -A %CMAKE_ARCH% ^
     -DD3D_INCLUDE_DIR="%DX_INCLUDE_DIR%" ^
     -DXINPUT_INCLUDE_DIR="%DX_INCLUDE_DIR%" ^
