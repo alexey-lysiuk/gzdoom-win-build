@@ -1,7 +1,7 @@
 @echo off
 
-if defined VCINSTALLDIR (
-    exit /b
+if defined CMAKE_TOOLSET (
+    goto :eof
 )
 
 set VS_COMNTOOLS_2010=%VS100COMNTOOLS%
@@ -19,6 +19,10 @@ set VS_TOOLSET_2015=v140_xp
 
 for %%v in (2015 2013 2012 2010) do (
     call :SetupEnvironment %%v
+
+    if defined CMAKE_TOOLSET (
+        goto :eof
+    )
 )
 
 goto :eof
@@ -35,4 +39,4 @@ goto :eof
     )
 
     call set "CMAKE_TOOLSET=-T %%VS_TOOLSET_%1%%"
-    exit /b
+    goto :eof
