@@ -28,5 +28,7 @@ pause
 goto :eof
 
 :MakeDeployZip
-    thirdparty\zip\zip.exe -9j deploy\%BUILD_BRANCH%-x%1-%BUILD_VERSION%.zip bin_x%1\*.exe bin_x%1\*.dll bin_x%1\*.pk3
+    set DEPLOY_FILENAME=deploy\%BUILD_BRANCH%-x%1-%BUILD_VERSION%.zip
+    thirdparty\zip\zip.exe -9j %DEPLOY_FILENAME% bin_x%1\*.exe bin_x%1\*.dll bin_x%1\*.pk3
+    thirdparty\zip\zip.exe -9 %DEPLOY_FILENAME% licenses\*.*
     goto :eof
