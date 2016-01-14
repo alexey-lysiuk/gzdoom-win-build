@@ -17,8 +17,11 @@ if not exist deploy (
     md deploy
 )
 
-call :MakeDeployZip 86
-call :MakeDeployZip 64
+REM call :MakeDeployZip 86
+REM call :MakeDeployZip 64
+
+call :MakeDeploy7z 86
+call :MakeDeploy7z 64
 
 popd
 
@@ -31,4 +34,8 @@ goto :eof
     set DEPLOY_FILENAME=deploy\%BUILD_BRANCH%-x%1-%BUILD_VERSION%.zip
     thirdparty\zip\zip.exe -9j %DEPLOY_FILENAME% bin_x%1\*.exe bin_x%1\*.dll bin_x%1\*.pk3
     thirdparty\zip\zip.exe -9 %DEPLOY_FILENAME% licenses\*.*
+    goto :eof
+
+:MakeDeploy7z
+    thirdparty\7-zip\7za.exe a deploy\%BUILD_BRANCH%-x%1-%BUILD_VERSION%.7z -y -t7z -mx=9 -ms=off .\bin_x%1\*.exe .\bin_x%1\*.dll .\bin_x%1\*.pk3 licenses\*.*
     goto :eof
