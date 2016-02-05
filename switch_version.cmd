@@ -8,8 +8,8 @@ echo.
 echo ^+----------------------------------------------------------^+
 echo ^|  Press the corresponding button to switch to a version:  ^|
 echo ^+----------------------------------------------------------^+
-echo ^|  1 - GZDoom 1.8.x                                        ^|
-echo ^|  2 - GZDoom 2.x.x                                        ^|
+echo ^|  1 - GZDoom 1.x                                          ^|
+echo ^|  2 - GZDoom 2.x                                          ^|
 echo ^|  3 - GZDoom GPL                                          ^|
 echo ^|  4 - GLOOME                                              ^|
 echo ^|  5 - ZDoom                                               ^|
@@ -21,10 +21,10 @@ echo.
 choice /c 123450
 
 if %ERRORLEVEL% equ 1 (
-    set BRANCH_LOCAL=gzdoom-18x
-    set BRANCH_REMOTE=gzdoom/g1.8
+    set BRANCH_LOCAL=gzdoom-1x
+    set BRANCH_REMOTE=gzdoom/g1.x
 ) else if %ERRORLEVEL% equ 2 (
-    set BRANCH_LOCAL=gzdoom-2xx
+    set BRANCH_LOCAL=gzdoom-2x
     set BRANCH_REMOTE=gzdoom/master
 ) else if %ERRORLEVEL% equ 3 (
     set REMOTE_NAME=gzdoom-gpl
