@@ -16,7 +16,7 @@ if exist ..\build_x%1 (
     )
 )
 
-if exist ..\build_x%1 (
+if exist ..\bin_x%1 (
     cd ..\bin_x%1
     call :DeleteGeneratedFiles .
 )
