@@ -26,6 +26,12 @@ if not defined SOLUTION_NAME (
 
 :: Build
 call vsvars.cmd
+
+if not defined CMAKE_TOOLSET (
+    echo Error: Cannot find supported version of Visual Studio.
+    exit /b
+)
+
 devenv ..\build_x%1\%SOLUTION_NAME%.sln /Build RelWithDebInfo
 
 :: Copy
