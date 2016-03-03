@@ -48,6 +48,12 @@ if "%1" == "86" (
     -DMPG123_LIBRARIES="%THIRDPARTY_DIR%mpg123\lib\x%1\libmpg123-0.lib" ^
     ..\gzdoom
 
+if %ERRORLEVEL% neq 0 (
+    echo Error: Failed to generate Visual Studio solution.
+    popd
+    exit /b
+)
+
 set DLL_FILES=^
     glew\bin\x%1\glew32.dll ^
     fmod\bin\fmodex%FMOD_SUFFIX%.dll ^
