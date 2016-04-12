@@ -11,4 +11,24 @@ You can get the build environment by cloning this repository (if you are familia
 
 #### Build process
 
-Run **switch_version.cmd** and select version you want to build. When the process complete run **build_x86.cmd** (for 32-bit version) or **build_x64.cmd** (for 64-bit version). Built executables are located in **bin_x86** and **bin_x64** folders respectively.
+Run **switch_version.cmd**.
+```
++----------------------------------------------------------+
+|  Press the corresponding button to switch to a version:  |
++----------------------------------------------------------+
+|  1 - GZDoom 1.x                                          |
+|  2 - GZDoom 2.x                                          |
+|  3 - GZDoom GPL                                          |
+|  4 - GLOOME                                              |
+|  5 - ZDoom                                               |
++----------------------------------------------------------+
+|  0 - Exit                                                |
++----------------------------------------------------------+
+```
+Select a version you want to build by pressing the corresponding number button on the keyboard.
+
+When the process complete run **build_x86.cmd** to make 32-bit executable or **build_x64.cmd** for 64-bit version. This may take a while.
+
+Built executables are located in **bin_x86** and **bin_x64** folders respectively.
+
+Run **deploy.cmd** to build both 32-bit and 64-bit versions and package them as 7-zip archives located in **deploy** folder.
