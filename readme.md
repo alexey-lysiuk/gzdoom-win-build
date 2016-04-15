@@ -3,7 +3,7 @@
 #### Prerequisites
 Visual Studio 2015 with Visual C++ is required to build (G)ZDoom.
 
-Microsoft offers [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) for free. However this edition doesn't install Visual C++ by default. You need to enable it by hand in the Programming Languages category during installation.
+Microsoft offers [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) for free. However this edition doesn't install Visual C++ by default. You need to enable it by hand in the Programming Languages category during installation:![VS2015 Setup](https://raw.githubusercontent.com/alexey-lysiuk/gzdoom-win-build/master/images/vs2015_cpp.png)
 
 #### Getting the build environment
 
