@@ -28,3 +28,8 @@ When the process complete run **build_x86.cmd** to make 32-bit executable or **b
 Built executables are located in **bin_x86** and **bin_x64** folders respectively.
 
 Run **deploy.cmd** to build both 32-bit and 64-bit versions and package them as 7-zip archives located in **deploy** folder.
+
+#### Troubleshooting
+
+The error reporting is very basic at the moment. However there is the special script **cleanup.cmd** that allows to start a build process from scratch. The same script must be run when Visual Studio updates have been installed.
+
