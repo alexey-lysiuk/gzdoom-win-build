@@ -31,5 +31,5 @@ Run **deploy.cmd** to build both 32-bit and 64-bit versions and package them as 
 
 #### Troubleshooting
 
-The error reporting is very basic at the moment. However there is the special script **cleanup.cmd** that allows to start a build process from scratch. The same script must be run when Visual Studio updates have been installed.
-
+The error reporting is very basic at the moment. However there is the special script **cleanup.cmd** that allows to start a build process from scratch. The same script must be run when Visual Studio updates have been installed.  
+Please note that pressing `Y` button will remove all intermediate files including directory with (G)ZDoom source code.
