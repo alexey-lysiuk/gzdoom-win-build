@@ -38,8 +38,8 @@ if "%1" == "86" (
     -DNASM_PATH="%THIRDPARTY_DIR%nasm\nasm.exe" ^
     -DGLEW_INCLUDE_DIR="%THIRDPARTY_DIR%glew\include" ^
     -DGLEW_LIBRARY="%THIRDPARTY_DIR%glew\lib\x%1\glew32.lib" ^
-    -DFMOD_INCLUDE_DIR="%THIRDPARTY_DIR%fmod\inc" ^
-    -DFMOD_LIBRARY="%THIRDPARTY_DIR%fmod\lib\fmodex%FMOD_SUFFIX%_vc.lib" ^
+    -DFMOD_INCLUDE_DIR="%THIRDPARTY_DIR%fmodex\inc" ^
+    -DFMOD_LIBRARY="%THIRDPARTY_DIR%fmodex\lib\fmodex%FMOD_SUFFIX%_vc.lib" ^
     -DOPENAL_INCLUDE_DIR="%THIRDPARTY_DIR%openal\include" ^
     -DOPENAL_LIBRARY="%THIRDPARTY_DIR%openal\lib\x%1\OpenAL32.lib" ^
     -DSNDFILE_INCLUDE_DIR="%THIRDPARTY_DIR%sndfile\include" ^
@@ -56,7 +56,7 @@ if %ERRORLEVEL% neq 0 (
 
 set DLL_FILES=^
     glew\bin\x%1\glew32.dll ^
-    fmod\bin\fmodex%FMOD_SUFFIX%.dll ^
+    fmodex\bin\fmodex%FMOD_SUFFIX%.dll ^
     openal\bin\x%1\OpenAL32.dll ^
     openal\bin\x%1\wrap_oal.dll ^
     mpg123\bin\x%1\libmpg123-0.dll ^
