@@ -20,6 +20,11 @@ set THIRDPARTY_DIR=%ROOT_DIR%thirdparty\
 set DX_INCLUDE_DIR=%THIRDPARTY_DIR%directx\include
 set DX_LIB_DIR=%THIRDPARTY_DIR%directx\lib\x%1\
 
+:: FMOD Ex
+set FMOD_TYPE=fmodex
+:: FMOD Studio Low Level API
+::set FMOD_TYPE=fmod
+
 if "%1" == "86" (
     set CMAKE_ARCH=Win32
 ) else (
@@ -38,8 +43,8 @@ if "%1" == "86" (
     -DNASM_PATH="%THIRDPARTY_DIR%nasm\nasm.exe" ^
     -DGLEW_INCLUDE_DIR="%THIRDPARTY_DIR%glew\include" ^
     -DGLEW_LIBRARY="%THIRDPARTY_DIR%glew\lib\x%1\glew32.lib" ^
-    -DFMOD_INCLUDE_DIR="%THIRDPARTY_DIR%fmodex\inc" ^
-    -DFMOD_LIBRARY="%THIRDPARTY_DIR%fmodex\lib\fmodex%FMOD_SUFFIX%_vc.lib" ^
+    -DFMOD_INCLUDE_DIR="%THIRDPARTY_DIR%%FMOD_TYPE%\inc" ^
+    -DFMOD_LIBRARY="%THIRDPARTY_DIR%%FMOD_TYPE%\lib\%FMOD_TYPE%%FMOD_SUFFIX%_vc.lib" ^
     -DOPENAL_INCLUDE_DIR="%THIRDPARTY_DIR%openal\include" ^
     -DOPENAL_LIBRARY="%THIRDPARTY_DIR%openal\lib\x%1\OpenAL32.lib" ^
     -DSNDFILE_INCLUDE_DIR="%THIRDPARTY_DIR%sndfile\include" ^
@@ -56,7 +61,7 @@ if %ERRORLEVEL% neq 0 (
 
 set DLL_FILES=^
     glew\bin\x%1\glew32.dll ^
-    fmodex\bin\fmodex%FMOD_SUFFIX%.dll ^
+    %FMOD_TYPE%\bin\%FMOD_TYPE%%FMOD_SUFFIX%.dll ^
     openal\bin\x%1\OpenAL32.dll ^
     openal\bin\x%1\wrap_oal.dll ^
     mpg123\bin\x%1\libmpg123-0.dll ^
